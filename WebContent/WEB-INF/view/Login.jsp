@@ -24,7 +24,7 @@
     </div>
 
     <!-- Login Form -->
-    <form action="logincheck.obj" type="post">
+    <form action="logincheck.obj" method="post">
       <input type="text" id="login" class="fadeIn second" name="username" placeholder="username">
       <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
       <input type="submit" class="fadeIn fourth" value="Log In">
