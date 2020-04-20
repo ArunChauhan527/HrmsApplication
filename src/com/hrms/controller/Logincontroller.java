@@ -38,7 +38,7 @@ public class Logincontroller {
 		  
 		  String response =  loginService.getLogin(username, password);
 		   
-		  if(response.contains("{message"))
+		  if(response.contains("{\"message"))
 		  {
 			 mv = new ModelAndView("Login");
 			 HashMap<String , String> map = new HashMap<>();
