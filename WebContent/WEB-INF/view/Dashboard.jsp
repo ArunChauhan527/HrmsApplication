@@ -19,7 +19,7 @@ body {
 }
 
 .row {
-	margin: 50px 50px;
+	margin: 20px 30px 10px 100px;
 }
 
 .row:after {
@@ -65,34 +65,52 @@ body {
 	<div class="row">
 		<div class="column">
 			<div class="card">
-			<img src="./resources/images/admin.png" width="150px" height="190px">
+			<img src="./resources/images/admin.png" width="150px" height="150px">
 				<p>Admin</p>
 			</div>
 		</div>
 
 		<div class="column">
 			<div class="card">
-			<img src="./resources/images/leave.png" width="150px" height="190px">
+			<img src="./resources/images/leave.png" width="150px" height="150px">
 				<p>Leave</p>
 			</div>
 		</div>
 
 		<div class="column">
 			<div class="card">
-			<img src="./resources/images/attendence.png" width="150px" height="190px">
-				<p>Attendence</p>
+			<img src="./resources/images/attendence.png" width="150px" height="150px">
+				<p>Attendance</p>
 			</div>
 		</div>
 		<div class="column">
 			<div class="card">
-			<img src="./resources/images/calender.jpg" width="150px" height="190px">
-				<p>Calender</p>
+			<img src="./resources/images/HR.jpg" width="150px" height="150px">
+				<p>HR Section</p>
 			</div>
 		</div>
 		<div class="column">
 			<div class="card">
-			<img src="./resources/images/performance.png" width="150px" height="190px">
-				<p>performance</p>
+			<img src="./resources/images/registration.jpg" width="150px" height="150px">
+				<p>Registration</p>
+			</div>
+		</div>
+		<div class="column">
+			<div class="card">
+			<img src="./resources/images/videochat.jpg" width="150px" height="150px">
+				<p>Video Chat</p>
+			</div>
+		</div>
+		<div class="column">
+			<div class="card">
+			<img src="./resources/images/task.jpg" width="150px" height="150px">
+				<p>Task</p>
+			</div>
+		</div>
+		<div class="column">
+			<div class="card">
+			<img src="./resources/images/messageclient.jpg" width="150px" height="150px">
+				<p>Message Client</p>
 			</div>
 		</div>
 
