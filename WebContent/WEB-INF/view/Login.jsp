@@ -34,7 +34,7 @@
     <label>${errorMsg}</label>
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
+      <a class="underlineHover" href="forgetPassword.obj">Forgot Password?</a>
     </div>
 
   </div>

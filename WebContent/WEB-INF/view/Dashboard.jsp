@@ -1,8 +1,11 @@
+<%@page import="com.hrms.model.Registration"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<title>HRMS</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
 <style>
@@ -69,14 +72,16 @@ body {
 				<p>Admin</p>
 			</div>
 		</div>
-
+         <form action="leaves.obj" method="POST">
+          <input type="hidden" name="empId" value="${registration.emp_code}">
+          <input type="hidden" name="company" value="${registration.industry}">
 		<div class="column">
 			<div class="card">
 			<img src="./resources/images/leave.png" width="150px" height="150px">
 				<p>Leave</p>
 			</div>
 		</div>
-
+        </form>
 		<div class="column">
 			<div class="card">
 			<img src="./resources/images/attendence.png" width="150px" height="150px">
@@ -116,4 +121,11 @@ body {
 
 	</div>
 </body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(".column").click(function(){
+	$(this).closest("form").submit();
+});
+
+</script>
 </html>

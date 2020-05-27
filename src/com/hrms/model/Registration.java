@@ -6,7 +6,7 @@ import java.util.Date;
 public class Registration {
 
 	
-	int emp_code;
+	Integer emp_code;
 	String DOB;
 	String personal_email_id;
 	String Offical_email_id;
@@ -17,10 +17,24 @@ public class Registration {
 	int pincode;
 	String state;
 	String pancard;
-	int aadharcardno;
+	long aadharcardno;
 	String user_name;
 	String password;
 	Date registration_date;
+	String comp_code;
+	String industry;
+	public String getComp_code() {
+		return comp_code;
+	}
+	public void setComp_code(String comp_code) {
+		this.comp_code = comp_code;
+	}
+	public String getIndustry() {
+		return industry;
+	}
+	public void setIndustry(String industry) {
+		this.industry = industry;
+	}
 	public int getEmp_code() {
 		return emp_code;
 	}
@@ -87,10 +101,10 @@ public class Registration {
 	public void setPancard(String pancard) {
 		this.pancard = pancard;
 	}
-	public int getAadharcardno() {
+	public long getAadharcardno() {
 		return aadharcardno;
 	}
-	public void setAadharcardno(int aadharcardno) {
+	public void setAadharcardno(long aadharcardno) {
 		this.aadharcardno = aadharcardno;
 	}
 	public String getUser_name() {

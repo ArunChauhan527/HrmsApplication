@@ -56,5 +56,60 @@ public class LoginServiceImpl implements LoginService {
 		}
 		
 	}
+	@Override
+	public HashMap<String, Object> genrateOtp(String emailid) {
+		// TODO Auto-generated method stub
+		try{
+		
+			String result ="";
+			HttpClient client = HttpClientBuilder.create().build();
+			HttpPost post = new HttpPost(url+"/genrateOtp?emailid="+emailid);
+			HttpResponse response = client.execute(post);
+			result = EntityUtils.toString(response.getEntity());
+			HashMap<String, Object> map = new ObjectMapper().readValue(result, HashMap.class);
+			return map;
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+			HashMap<String, Object> map = new HashMap<>();
+			map.put("message", e.getMessage());
+			return map;
+		}
+		
+	}
+	@Override
+	public String changePassword(HashMap<String, Object> map) throws JsonProcessingException {
+		// TODO Auto-generated method stub
+		try{
+			
+			String result="";
+			HttpClient client = HttpClientBuilder.create().build();
+			HttpPost postUrl = new HttpPost(url+"/otpChangePassword");
+			System.out.println(postUrl);
+			postUrl.setEntity(new StringEntity(new ObjectMapper().writeValueAsString(map)));
+			HttpResponse response = client.execute(postUrl);
+            if(response.getStatusLine().getStatusCode()==200)
+            {
+            	result = EntityUtils.toString(response.getEntity());
+            }
+            else
+            {
+            	result = EntityUtils.toString(response.getEntity());
+            }
+			System.out.println(result);
+			return result;
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			HashMap<String,String> map1 = new HashMap<>();
+			map.put("message","Some error occured");
+			ObjectMapper mapper = new ObjectMapper();
+			
+			return mapper.writeValueAsString(map1);	
+		}
+		
+
+	}
 
 }
