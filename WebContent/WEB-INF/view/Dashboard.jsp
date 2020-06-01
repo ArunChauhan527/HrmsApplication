@@ -49,17 +49,95 @@ body {
 	padding: 10px 10px;
 }
 
-#a {
+#home {
 	background-color: #288cd6;
 	color: #fff;
 	text-align: left;
 	font-size: 40px;
+	float: left;
+
 }
+
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  float: right;
+  margin-right: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  position: fixed;
+  margin-right: 10px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
 </style>
 </head>
 <body>
-	<div class="header">
-		<div id="a">HRMS</div>
+	 <div class="header">
+		<div id="home">HRMS</div> 
+		
+		<!-- <div class="header">
+		<a href="#hrms">HRMS</a> -->
+		<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#changepassowrd">Change Password</a>
+    <a href="#profile">Profile</a>
+    <a href="#logout">Log Out</a>
+  </div>
+</div>
+</div>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
 	</div>
 
 	<div class="row">
@@ -111,6 +189,12 @@ body {
 			<div class="card">
 			<img src="./resources/images/messageclient.jpg" width="150px" height="150px">
 				<p>Message Client</p>
+			</div>
+		</div>
+		<div class="column">
+			<div class="card">
+			<img src="./resources/images/calender.jpg" width="150px" height="150px">
+				<p>Calendar</p>
 			</div>
 		</div>
 
