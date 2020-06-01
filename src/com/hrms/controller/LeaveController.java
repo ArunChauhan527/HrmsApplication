@@ -2,6 +2,7 @@ package com.hrms.controller;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -13,10 +14,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hrms.model.Admin;
+import com.hrms.model.Leave;
 import com.hrms.model.Registration;
 import com.hrms.service.LeaveService;
 @Controller
@@ -105,6 +108,8 @@ public class LeaveController {
 					mv.addObject("casualleave", casualleave);
 					mv.addObject("waiting",waiting);
 					mv.addObject("approved", approved);
+					mv.addObject("company", company);
+					mv.addObject("empId", empId);
 				}
 				else
 				{
@@ -132,6 +137,37 @@ public class LeaveController {
 		}
 		
 		return mv;
+	}
+	
+	
+	@RequestMapping(value="appliedLeaves",method=RequestMethod.POST)
+	public @ResponseBody String appliedLeaves(@RequestParam("company")String company,@RequestParam("empId")String empId,HttpServletRequest request)
+	{
+		try{
+			
+			Registration reg = (Registration) request.getSession().getAttribute("logindetails");
+			if(reg!=null)
+			{
+				
+				HashMap<String, Object> leave = leaves.appliedeaves(empId, company);
+				
+				ObjectMapper mapper = new ObjectMapper();
+				String response = mapper.writeValueAsString(leave);
+				
+				return response;
+				
+			}
+			else
+			{
+				return "sessionout";
+			}
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return e.getMessage();
+		}
+		
 	}
 	
 	

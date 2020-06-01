@@ -7,10 +7,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>HRMS</title>
 <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="./resources/css/plugins/dataTables.min.css" rel="stylesheet">
 <link href="./resources/css/leaves.css" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="headerV2.jsp"></jsp:include>
+<input type="hidden" value="${empId}" id="empId">
+<input type="hidden" value="${company}" id="company">
 <div class="row">
 <div class="column">
 <div class="card">
@@ -41,5 +44,21 @@ Wait for Approval Leaves : ${waiting}
 </div>
 </div>
 </div>
+
+<br>
+
+<div>
+<button> Apply Leaves</button>
+<button onclick="appliedLeave();"> Applied Leaves</button>
+
+</div>
+
+<div id="content" width="70%" align="center">
+<table id="example" class="display" width="100%"></table>
+</div>
+
 </body>
+<script src="./resources/js/plugins/jquery.min.js"></script>
+<script src="./resources/js/plugins/dataTables.min.js"></script>
+<script type="text/javascript" src="./resources/js/leaves.js" ></script>
 </html>
